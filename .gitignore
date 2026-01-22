@@ -1,0 +1,13 @@
+build/
+conf/
+jars/
+jars-og/
+libraries/
+minecraft/.settings/
+minecraft/bin/
+minecraft/game/
+minecraft/md5/
+minecraft/reobf/
+minecraft/source/
+minecraft_server/
+patches/
