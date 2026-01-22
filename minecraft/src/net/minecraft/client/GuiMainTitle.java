@@ -32,6 +32,8 @@ public final class GuiMainTitle extends GuiScreen {
 		Integer i = 0;
 		for (String t : texts)
 		{
+			System.out.println(t);
+
 			this.controlList.add(
 				new GuiButton(
 					i,
@@ -71,15 +73,15 @@ public final class GuiMainTitle extends GuiScreen {
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/gui/logo.png"));
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		var3.setColorOpaque_I(16777215);
-		this.drawTexturedModalRect((this.width - 256) / 2, 30, 0, 0, 256, 49);
+		// this.drawTexturedModalRect((this.width - 256) / 2, 30, 0, 0, 256, 49);
 		GL11.glPushMatrix();
 		GL11.glTranslatef((float)(this.width / 2 + 90), 70.0F, 0.0F);
 		GL11.glRotatef(-20.0F, 0.0F, 0.0F, 1.0F);
 		float var4 = 1.8F - MathHelper.abs(MathHelper.sin((float)(System.currentTimeMillis() % 1000L) / 1000.0F * (float)Math.PI * 2.0F) * 0.1F);
 		GL11.glScalef(var4, var4, var4);
-		drawCenteredString(this.fontRenderer, "Pre-beta!", 0, -8, 16776960);
+		// drawCenteredString(this.fontRenderer, "Pre-beta!", 0, -8, 16776960);
 		GL11.glPopMatrix();
-		String var5 = "Copyright Mojang Specifications. Do not distribute.";
+		String var5 = "MOBMOD THING";
 		b(this.fontRenderer, var5, this.width - this.fontRenderer.getStringWidth(var5) - 2, this.height - 10, 16777215);
 		super.drawScreen(var1, var2);
 	}
