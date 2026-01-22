@@ -5,7 +5,7 @@ import net.minecraft.client.gui.GuiScreen;
 public final class TechlogLengthArrivalPoll extends GuiScreen {
 	private GuiScreen prevGui;
 
-	public GuiNewLevel(GuiScreen var1) {
+	public TechlogLengthArrivalPoll(GuiScreen var1) {
 		this.prevGui = var1;
 	}
 
