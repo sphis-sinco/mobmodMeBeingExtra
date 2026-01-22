@@ -32,14 +32,14 @@ public final class GuiMainTitle extends GuiScreen {
 		Integer i = 0;
 		for (String t : texts)
 		{
-			System.out.println(t);
+			System.out.println("[GUIMAINTITLE] : " + t);
 
 			this.controlList.add(
 				new GuiButton(
 					i,
 					this.width / 2 - 100,
 					this.height / 4 + (48 + (24 * i)),
-					"Generate new level..."
+					t
 				)
 			);
 
