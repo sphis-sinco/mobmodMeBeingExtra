@@ -1,5 +1,6 @@
 package net.mobmod.macohi.gui;
 
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 
 public final class TechlogLengthArrivalPoll extends GuiScreen {
@@ -13,7 +14,6 @@ public final class TechlogLengthArrivalPoll extends GuiScreen {
 		this.controlList.clear();
 		this.controlList.add(new GuiButton(0, this.width / 2 - 150, this.height / 4 + 48, "Longer, less frequent"));
 		this.controlList.add(new GuiButton(1, this.width / 2 - 50, this.height / 4 + 48, "Shorter, more frequent"));
-		this.worldOptions();
 	}
 
 	protected final void actionPerformed(GuiButton var1) {
