@@ -13,8 +13,8 @@ public class GuiButton extends Gui {
 	public boolean enabled;
 	public boolean visible;
 
-	public GuiButton(int var1, int var2, int var3, String var4, Integer width, Integer height) {
-		this(var1, var2, var3, (width == null) ? 200 : width, (height == null) ? 20 : height, var4);
+	public GuiButton(int var1, int var2, int var3, String var4) {
+		this(var1, var2, var3, 200, 20, var4);
 	}
 
 	protected GuiButton(int var1, int var2, int var3, int var4, int var5, String var6) {
