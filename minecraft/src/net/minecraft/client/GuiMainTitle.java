@@ -29,7 +29,7 @@ public final class GuiMainTitle extends GuiScreen {
 		this.controlList.clear();
 
 		texts.clear();
-		texts.add("Bob");
+		texts.add("Techlog Length and Arrival Poll");
 
 		System.out.println("\n[GUIMAINTITLE] : initGui");
 		Integer i = 0;
@@ -53,10 +53,6 @@ public final class GuiMainTitle extends GuiScreen {
 	protected final void actionPerformed(GuiButton var1) {
 		if(var1.id == 0) {
 			this.mc.displayGuiScreen(new GuiOptions(this, this.mc.options));
-		}
-
-		if(var1.id == 1) {
-			this.mc.displayGuiScreen(new GuiNewLevel(this));
 		}
 	}
 
