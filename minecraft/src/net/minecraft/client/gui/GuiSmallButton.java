@@ -1,7 +1,7 @@
 package net.minecraft.client.gui;
 
 public final class GuiSmallButton extends GuiButton {
-	public GuiSmallButton(int id, int x, int y, String displayString) {
-		super(id, x, y, 150, 20, displayString);
+	public GuiSmallButton(int var1, int var2, int var3, String var4) {
+		super(var1, var2, var3, 150, 20, var4);
 	}
 }

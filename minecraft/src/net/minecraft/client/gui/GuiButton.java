@@ -12,22 +12,22 @@ public class GuiButton extends Gui {
 	public int id;
 	public boolean enabled;
 	public boolean visible;
-	
-	public GuiButton(int id, int x, int y, String displayString) {
-		this(id, x, y, 200, 20, displayString);
+
+	public GuiButton(int var1, int var2, int var3, String var4, Integer width, Integer height) {
+		this(var1, var2, var3, (width == null) ? 200 : width, (height == null) ? 20 : height, var4);
 	}
 
-	protected GuiButton(int id, int x, int y, int width, int height, String displayString) {
+	protected GuiButton(int var1, int var2, int var3, int var4, int var5, String var6) {
 		this.width = 200;
 		this.height = 20;
 		this.enabled = true;
 		this.visible = true;
-		this.id = id;
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
-		this.displayString = displayString;
+		this.id = var1;
+		this.x = var2;
+		this.y = var3;
+		this.width = var4;
+		this.height = 20;
+		this.displayString = var6;
 	}
 
 	public final void drawButton(Minecraft var1, int var2, int var3) {

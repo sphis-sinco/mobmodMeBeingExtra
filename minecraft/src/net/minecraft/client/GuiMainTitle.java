@@ -29,11 +29,12 @@ public final class GuiMainTitle extends GuiScreen {
 		for (MenuTitleButton object : Constants.MENU_TITLE_BUTTONS()) {
 
 			GuiButton button = new GuiButton(
-					i,
-					this.width / 2 - 100,
-					this.height / 4 + (48 + (24 * i)),
-					object.text
-				);
+				i, 
+				this.width / 2 - 100, 
+				this.height / 4 + (48 + (24 * i)), 
+				object.text, 
+				200
+			);
 
 			this.controlList.add(button);
 			i++;
