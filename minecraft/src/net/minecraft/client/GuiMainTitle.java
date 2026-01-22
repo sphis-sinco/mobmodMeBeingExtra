@@ -6,6 +6,9 @@ import net.minecraft.client.gui.GuiNewLevel;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.render.Tessellator;
+
+import java.util.ArrayList;
+
 import org.lwjgl.opengl.GL11;
 import util.MathHelper;
 
@@ -14,22 +17,32 @@ public final class GuiMainTitle extends GuiScreen {
 
 	public final void updateScreen() {
 		this.updateCounter += 0.01F;
+
+		texts.add("Bob");
 	}
 
 	protected final void keyTyped(char var1, int var2) {
 	}
 
+	public ArrayList<String> texts = new ArrayList<String>();
+
 	public final void initGui() {
 		this.controlList.clear();
-		this.controlList.add(new GuiButton(1, this.width / 2 - 100, this.height / 4 + 48, "Generate new level..."));
-		this.controlList.add(new GuiButton(2, this.width / 2 - 100, this.height / 4 + 72, "Load level.."));
-		this.controlList.add(new GuiButton(3, this.width / 2 - 100, this.height / 4 + 96, "Play tutorial level"));
-		this.controlList.add(new GuiButton(0, this.width / 2 - 100, this.height / 4 + 120 + 12, "Options..."));
-		((GuiButton)this.controlList.get(2)).enabled = false;
-		if(this.mc.session == null) {
-			((GuiButton)this.controlList.get(1)).enabled = false;
-		}
 
+		Integer i = 0;
+		for (String t : texts)
+		{
+			this.controlList.add(
+				new GuiButton(
+					i,
+					this.width / 2 - 100,
+					this.height / 4 + (48 + (24 * i)),
+					"Generate new level..."
+				)
+			);
+
+			i++;
+		}
 	}
 
 	protected final void actionPerformed(GuiButton var1) {
@@ -40,11 +53,6 @@ public final class GuiMainTitle extends GuiScreen {
 		if(var1.id == 1) {
 			this.mc.displayGuiScreen(new GuiNewLevel(this));
 		}
-
-		if(this.mc.session != null && var1.id == 2) {
-			this.mc.displayGuiScreen(new GuiLoadLevel(this));
-		}
-
 	}
 
 	public final void drawScreen(int var1, int var2) {
