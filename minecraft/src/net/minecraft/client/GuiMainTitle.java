@@ -18,7 +18,6 @@ public final class GuiMainTitle extends GuiScreen {
 	public final void updateScreen() {
 		this.updateCounter += 0.01F;
 
-		texts.add("Bob");
 	}
 
 	protected final void keyTyped(char var1, int var2) {
@@ -28,6 +27,9 @@ public final class GuiMainTitle extends GuiScreen {
 
 	public final void initGui() {
 		this.controlList.clear();
+		
+		texts.clear();
+		texts.add("Bob");
 
 		Integer i = 0;
 		for (String t : texts)
