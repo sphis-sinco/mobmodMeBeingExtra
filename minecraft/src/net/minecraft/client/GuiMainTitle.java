@@ -27,10 +27,11 @@ public final class GuiMainTitle extends GuiScreen {
 
 	public final void initGui() {
 		this.controlList.clear();
-		
+
 		texts.clear();
 		texts.add("Bob");
 
+		System.out.println("\n[GUIMAINTITLE] : initGui");
 		Integer i = 0;
 		for (String t : texts)
 		{
