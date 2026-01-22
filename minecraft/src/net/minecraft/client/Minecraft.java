@@ -42,6 +42,8 @@ import net.minecraft.game.level.World;
 import net.minecraft.game.level.block.Block;
 import net.minecraft.game.level.generator.LevelGenerator;
 import net.minecraft.game.physics.MovingObjectPosition;
+import net.mobmod.macohi.Constants;
+
 import org.lwjgl.BufferUtils;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Controllers;
@@ -179,7 +181,7 @@ public final class Minecraft implements Runnable {
 				Display.setDisplayMode(new DisplayMode(this.displayWidth, this.displayHeight));
 			}
 
-			Display.setTitle("Minecraft 0.31");
+			Display.setTitle(Constants.DISPLAY_TITLE);
 
 			try {
 				Display.create();
@@ -217,7 +219,7 @@ public final class Minecraft implements Runnable {
 			GL11.glLoadIdentity();
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 			this.glCapabilities = new OpenGlCapsChecker();
-			String var3 = "minecraft";
+			String appdatapath = Constants.SAVE_APPDATAPATH;
 			String var2 = System.getProperty("user.home", ".");
 			int[] var10001 = EnumOSMappingHelper.osValues;
 			String var4 = System.getProperty("os.name").toLowerCase();
@@ -225,21 +227,21 @@ public final class Minecraft implements Runnable {
 			switch(var10001[(var4.contains("win") ? EnumOS.c : (var4.contains("mac") ? EnumOS.d : (var4.contains("solaris") ? EnumOS.b : (var4.contains("sunos") ? EnumOS.b : (var4.contains("linux") ? EnumOS.a : (var4.contains("unix") ? EnumOS.a : EnumOS.e)))))).ordinal()]) {
 			case 1:
 			case 2:
-				var24 = new File(var2, '.' + var3 + '/');
+				var24 = new File(var2, appdatapath + '/');
 				break;
 			case 3:
 				var4 = System.getenv("APPDATA");
 				if(var4 != null) {
-					var24 = new File(var4, "." + var3 + '/');
+					var24 = new File(var4, appdatapath + '/');
 				} else {
-					var24 = new File(var2, '.' + var3 + '/');
+					var24 = new File(var2, appdatapath + '/');
 				}
 				break;
 			case 4:
-				var24 = new File(var2, "Library/Application Support/" + var3);
+				var24 = new File(var2, "Library/Application Support/" + appdatapath);
 				break;
 			default:
-				var24 = new File(var2, var3 + '/');
+				var24 = new File(var2, appdatapath + '/');
 			}
 
 			if(!var24.exists() && !var24.mkdirs()) {
