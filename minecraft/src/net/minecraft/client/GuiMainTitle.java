@@ -6,6 +6,7 @@ import net.minecraft.client.gui.GuiNewLevel;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.render.Tessellator;
+import net.mobmod.macohi.gui.TechlogLengthArrivalPoll;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,7 @@ public final class GuiMainTitle extends GuiScreen {
 				new GuiButton(
 					i,
 					this.width / 2 - 100,
-					this.height / 4 + (48 + (24 * i)),
+					this.height / 16 + (24 * i),
 					t
 				)
 			);
@@ -52,7 +53,7 @@ public final class GuiMainTitle extends GuiScreen {
 
 	protected final void actionPerformed(GuiButton var1) {
 		if(var1.id == 0) {
-			this.mc.displayGuiScreen(new GuiOptions(this, this.mc.options));
+			this.mc.displayGuiScreen(new TechlogLengthArrivalPoll(this));
 		}
 	}
 
